@@ -54,7 +54,7 @@ const JobSeaLogin = () => {
       : formData;
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000${url}`, {
+      const response = await fetch(`https://career-backend-production.up.railway.app${url}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestData),

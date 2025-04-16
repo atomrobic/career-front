@@ -46,7 +46,7 @@ const JobDetails = () => {
       console.log("Using Refresh Token:", refreshToken);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/token/refresh/",
+        "https://career-backend-production.up.railway.app/api/api/token/refresh/",
         {
           refresh: refreshToken,
         }
