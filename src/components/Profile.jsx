@@ -162,7 +162,17 @@ const ProfilePage = () => {
             >
               Edit
             </Button>
-           
+            <Popconfirm
+              title="Delete Profile"
+              description="Are you sure you want to delete your profile information?"
+              onConfirm={handleDelete}
+              okText="Yes"
+              cancelText="No"
+            >
+              <Button icon={<DeleteOutlined />} danger>
+                Delete
+              </Button>
+            </Popconfirm>
           </Space>
         </div>
         
