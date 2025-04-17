@@ -97,12 +97,12 @@ const ProfilePage = () => {
       // Try update first, fallback to create
       await axios({
         method: "PUT",
-        url: "http://127.0.0.1:8000/api/profile/",
+        url: "http://127.0.0.1:8000/api/api/profile/",
         data: payload,
         headers: { Authorization: `Bearer ${token}` },
       }).catch(async (err) => {
         if (err.response?.status === 404) {
-          await axios.post("http://127.0.0.1:8000/api/profile/", payload, {
+          await axios.post("http://127.0.0.1:8000/api/api/profile/", payload, {
             headers: { Authorization: `Bearer ${token}` },
           });
         } else throw err;
@@ -124,7 +124,7 @@ const ProfilePage = () => {
         return;
       }
 
-      await axios.delete("http://127.0.0.1:8000/api/profile/", {
+      await axios.delete("http://127.0.0.1:8000/api/api/profile/", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -162,17 +162,7 @@ const ProfilePage = () => {
             >
               Edit
             </Button>
-            <Popconfirm
-              title="Delete Profile"
-              description="Are you sure you want to delete your profile information?"
-              onConfirm={handleDelete}
-              okText="Yes"
-              cancelText="No"
-            >
-              <Button icon={<DeleteOutlined />} danger>
-                Delete
-              </Button>
-            </Popconfirm>
+           
           </Space>
         </div>
         
