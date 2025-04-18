@@ -127,7 +127,7 @@ const JobDetails = () => {
 
         console.log("Fetching companies with token:", token);
 
-        const response = await axios.get("http://127.0.0.1:8000/api/companies/", {
+        const response = await axios.get("https://career-backend-production.up.railway.app/api/api/companies/", {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
